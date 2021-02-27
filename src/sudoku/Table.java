@@ -1,9 +1,6 @@
 package sudoku;
 
-import sudoku.exceptions.ImmutableCellWriting;
-import sudoku.exceptions.InvalidColumnException;
-import sudoku.exceptions.InvalidRowException;
-import sudoku.exceptions.InvalidValueException;
+import sudoku.exceptions.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
