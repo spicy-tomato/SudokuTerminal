@@ -18,11 +18,11 @@ public class Table {
     private static final String RESET = "\033[0m";
     private static final String RED_BOLD = "\033[1;31m";
 
-    public Table(int size) throws FileNotFoundException {
+    public Table(int size) throws FileNotFoundException, NullPointerException {
         this.size = size;
         try {
             getTable();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | NullPointerException e) {
             throw new FileNotFoundException("Không tìm thấy tệp dữ liệu!");
         }
     }
@@ -43,7 +43,7 @@ public class Table {
         }
     }
 
-    private List<int[][]> getAllTable() throws FileNotFoundException {
+    private List<int[][]> getAllTable() throws FileNotFoundException, NullPointerException {
         String fileName = size + ".txt";
         File file = new File(getClass().getResource(fileName).getPath());
 
